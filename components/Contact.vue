@@ -112,7 +112,7 @@ export default {
                 text: this.bodyMessage,
             })
             
-            alert('Email enviado com sucesso! Entraremos em contato em breve!');
+            alert('Contato registrado com sucesso! Entraremos em contato em breve!');
         }
     }
 }

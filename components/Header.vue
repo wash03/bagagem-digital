@@ -35,7 +35,7 @@
                             <img :src="urlFlag" alt="flag">
                         </template>
                         <div>
-                            <p id="select-lang-title">Country Website: {{ selectedLang }}</p>
+                            <p id="select-lang-title">Country Website:</p>
                             <b-form-select v-model="$i18n.locale" :options="options" class="mb-4" id="select">
                             </b-form-select>
                         </div>
@@ -53,8 +53,8 @@
                 <h5>{{ $t('subtituloPt1') }}<br>{{ $t('subtituloPt2') }}</h5>
 
                 <form class="form-inline form-header" method="post" name="contact-form-header">
-                    <input class="form-header-input" type="email" :placeholder="$t('formHeaderPlaceholder')" aria-label="Email">
-                    <button class="form-header-btn" type="submit">{{ $t('formButtonText') }}</button>
+                    <input class="form-header-input" type="email" v-model="email" :placeholder="$t('formHeaderPlaceholder')" aria-label="Email">
+                    <button class="form-header-btn" type="submit" @click.prevent="enviar">{{ $t('formButtonText') }}</button>
                 </form>
             </div>
         </div>
@@ -71,7 +71,8 @@ export default {
             { value: 'en', text:'United States' },
             { value: 'es', text:'España' },
         ],
-        urlFlag: require('@/static/img/brasil.png')
+        urlFlag: require('@/static/img/brasil.png'),
+        email: ''
       }
     },
 
@@ -87,6 +88,16 @@ export default {
                 console.log('portugues');
                 this.urlFlag = require('@/static/img/brasil.png')
             }
+        },
+
+        enviar() {
+            this.$axios.$post('/mail/send', {
+                from: this.email,
+                subject: 'Contato - site bagagem',
+                text: this.email,
+            })
+            
+            alert('Contato registrado com sucesso! Entraremos em contato em breve!');
         },
 
         scroll(id) {  
