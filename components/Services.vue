@@ -40,9 +40,21 @@
         </div>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <button class="form-bagagem-btn">{{ $t('servicesButton') }}</button>
+                <button class="form-bagagem-btn" @click="scroll('contato')">{{ $t('servicesButton') }}</button>
             </div>
         </div>
     </div>
 </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        scroll(id) {  
+            document.getElementById(id).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    },
+}
+</script>

@@ -8,7 +8,7 @@
                 <div class="col-md-6">
                     <img class="mx-auto d-block" id="hr" src="../static/img/hr.svg" alt="hr">
                     <h2>{{ $t('contactFormTitle') }}</h2>
-                    <p id="subtitle" class="text-center">{{ $t('contactFormSubtitle') }}</p>
+                    <p id="subtitle-contact" class="text-center">{{ $t('contactFormSubtitle') }}</p>
                     <form id="form-contato">
                         <form-group id="input-group-1">
                             <label for="input-nome">{{ $t('contactFormInputName') }}</label>
@@ -78,9 +78,9 @@
                         <img src="../static/img/facebook.svg" alt="Facebook">
                         
                         <img src="../static/img/youtube.svg" alt="Youtube">
-                        <br><br><br><br><br><br>
+                        <br><br><br><br>
                         <p class="ml-5">
-                            <img class="ml-5 mb-4" src="../static/img/lpb.svg" alt="Youtube">
+                            <img class="ml-4 mb-3" src="../static/img/lpb.svg" alt="LPB"> 
                         </p>
                     </div>
                 </div>
