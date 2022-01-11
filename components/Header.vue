@@ -95,6 +95,13 @@
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <a :href="whatsappLink" class="btn btn-contact" target="_blank" role="button">
+                    <img src="../static/img/fale-conosco.png" alt="botao">
+                </a>
+            </div>
+        </div>    
     </div>
 </template>
 
@@ -110,7 +117,8 @@ export default {
         ],
         urlFlag: require('@/static/img/brasil.png'),
         email: '',
-        scrollPosition: null
+        scrollPosition: null,
+        whatsappLink: 'https://api.whatsapp.com/send?phone=5562982079738&text=Quero%20embarcar%20nessa%20viagem!'
       }
     },
 
