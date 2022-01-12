@@ -141,7 +141,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <a :href="whatsappLink" class="btn btn-contact" target="_blank" role="button">
-                    <img src="../static/img/fale-conosco.png" alt="botao">
+                    <img :src="urlButtonWtp" alt="botao">
                 </a>
             </div>
         </div>    
@@ -159,6 +159,7 @@ export default {
             { value: 'es', text:'España' },
         ],
         urlFlag: require('@/static/img/brasil.png'),
+        urlButtonWtp: require('@/static/img/fale-conosco.png'),
         email: '',
         scrollPosition: null,
         whatsappLink: 'https://api.whatsapp.com/send?phone=5562982079738&text=Quero%20embarcar%20nessa%20viagem!'
@@ -169,10 +170,13 @@ export default {
         selectLanguage(){
             if (this.selectedLang == 'en') {
                 this.urlFlag = require('@/static/img/eua.png')
+                this.urlButtonWtp = require('@/static/img/fale-conosco-en.png')
             } else if (this.selectedLang == 'es') {
                 this.urlFlag = require('@/static/img/espanha.png')
+                this.urlButtonWtp = require('@/static/img/fale-conosco-es.png')
             } else if (this.selectedLang == 'pt') {
                 this.urlFlag = require('@/static/img/brasil.png')
+                this.urlButtonWtp = require('@/static/img/fale-conosco.png')
             }
         },
 
