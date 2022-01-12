@@ -1,5 +1,45 @@
 <template>
     <div class="container" id="header">
+
+        <header id="header-nav">
+            <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu-nav-bg" class="float-right navbar-nav" role="menu">
+                 <li class="nav-item">
+                    <img src="../static/img/logo-footer.png" id="logo" alt="bagagem.png">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" @click="scroll('header')">{{ $t('menuInicio') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" @click="scroll('services')">{{ $t('menuServicos') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" @click="scroll('contato')">{{ $t('menuContato') }}</a>
+                </li>
+                <b-nav-item-dropdown
+                    id="change-language"
+                    toggle-class="nav-link-custom"
+                    text="language"
+                    right
+                >
+                    <template slot="button-content">
+                        <img :src="urlFlag" alt="flag">
+                    </template>
+                    <div>
+                        <p id="select-lang-title">Country Website:</p>
+                        <b-form-select v-model="$i18n.locale" :options="options" class="mb-4" id="select">
+                        </b-form-select>
+                    </div>
+                </b-nav-item-dropdown>
+            </ul>
+            </nav>
+        </header>
+
+
+
         <nav class="navbar navbar-expand-lg" id="menu-fixo" v-show="this.scrollPosition > 110">
             <ul id="logo" class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -147,11 +187,33 @@ export default {
             document.getElementById(id).scrollIntoView({
                 behavior: "smooth"
             });
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
         },
 
         updateScroll() {
             this.scrollPosition = window.scrollY;
             console.log(this.scrollPosition)
+        },
+
+        menuBurguer() {
+            const btnMobile = document.getElementById('btn-mobile');
+
+            function toggleMenu(event) {
+                if (event.type === 'touchstart') event.preventDefault();
+                const nav = document.getElementById('nav');
+                nav.classList.toggle('active');
+                const active = nav.classList.contains('active');
+                event.currentTarget.setAttribute('aria-expanded', active);
+                if (active) {
+                    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+                } else {
+                    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+                }
+            }
+
+            btnMobile.addEventListener('click', toggleMenu);
+            btnMobile.addEventListener('touchstart', toggleMenu);
         }
     },
 
@@ -162,6 +224,7 @@ export default {
 
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
+        this.menuBurguer();
     },
 
     destroy() {
