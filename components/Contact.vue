@@ -113,6 +113,9 @@ export default {
             })
             
             alert('Contato registrado com sucesso! Entraremos em contato em breve!');
+            this.nome = '';
+            this.email = '';
+            this.telefone = '';
         }
     }
 }

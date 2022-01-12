@@ -17,6 +17,9 @@
                     <a class="nav-link" @click="scroll('services')">{{ $t('menuServicos') }}</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" @click="scroll('portfolio')">{{ $t('menuPortfolio') }}</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" @click="scroll('contato')">{{ $t('menuContato') }}</a>
                 </li>
                 <b-nav-item-dropdown
