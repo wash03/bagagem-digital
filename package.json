@@ -17,5 +17,7 @@
     "nuxt-i18n": "^6.28.1",
     "nuxt-mail": "^3.0.16"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "push-dir": "^0.4.1"
+  }
 }
