@@ -521,6 +521,9 @@ body {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+    .btn-contact-mb{
+        display: none;
+    }
     #header-nav{
         display: none;
     }
@@ -914,6 +917,9 @@ body {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1365.98px) {
+    .btn-contact-mb{
+        display: none;
+    }
     #header-nav{
         display: none;
     }
@@ -1375,6 +1381,9 @@ body {
 
 /* Extra large devices (large desktops, 1366px and up) */
 @media (min-width: 1366px) and (max-width: 2559.98px) {
+    .btn-contact-mb{
+        display: none;
+    }
     #header-nav{
         display: none;
     }
@@ -1790,6 +1799,9 @@ body {
 }
 
 @media (min-width: 2560px) {
+    .btn-contact-mb{
+        display: none;
+    }
     #header-nav{
         display: none;
     }
