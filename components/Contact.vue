@@ -78,7 +78,7 @@
                         <img src="../static/img/facebook.svg" alt="Facebook">
                         
                         <img src="../static/img/youtube.svg" alt="Youtube">
-                        <br><br><br><br>
+                    
                         <p class="ml-5">
                             <img class="ml-4 mb-3" src="../static/img/lpb.svg" alt="LPB"> 
                         </p>
