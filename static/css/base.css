@@ -1782,6 +1782,11 @@ body {
     #redes-sociais-footer{
         margin-top: 70px;
     }
+
+    #redes-sociais-footer p{
+        margin-left: 85px !important;
+        margin-top: 85px;
+    }
     
     #redes-sociais-footer img{
         margin-right: 50px;
@@ -2199,6 +2204,11 @@ body {
     
     #redes-sociais-footer{
         margin-top: 70px;
+    }
+
+    #redes-sociais-footer p{
+        margin-left: 85px !important;
+        margin-top: 85px;
     }
     
     #redes-sociais-footer img{
