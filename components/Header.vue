@@ -143,6 +143,10 @@
                 <a :href="whatsappLink" class="btn btn-contact" target="_blank" role="button">
                     <img :src="urlButtonWtp" alt="botao">
                 </a>
+
+                <a :href="whatsappLink" class="btn btn-contact-mb" target="_blank" role="button">
+                    <img src="../static/img/btn-zap-mb.png" alt="botao">
+                </a>
             </div>
         </div>    
     </div>
