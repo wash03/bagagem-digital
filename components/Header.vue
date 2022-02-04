@@ -41,8 +41,6 @@
             </nav>
         </header>
 
-
-
         <nav class="navbar navbar-expand-lg" id="menu-fixo" v-show="this.scrollPosition > 110">
             <ul id="logo" class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -124,17 +122,17 @@
             </div>
         </nav>
         <div class="row">
-            <div class="col-md-7 col-sm-12" id="left-side">
+            <div class="col-lg-7 col-md-12 col-xs-12 col-sm-12" id="left-side">
                 <img id="capa" src="../static/img/capa.png" alt="">
                 <img class="background-left" src="../static/img/background-left.png" alt="background-left">
             </div>
-            <div class="col-md-5 col-sm-12">
+            <div class="col-lg-5 col-md-12 col-xs-12 col-sm-12">
                 <h1>{{ $t('tituloPt1') }}<br>{{ $t('tituloPt2') }}</h1>
                 <h5>{{ $t('subtituloPt1') }}<br>{{ $t('subtituloPt2') }}</h5>
 
-                <form class="form-inline form-header" method="post" name="contact-form-header">
-                    <input class="form-header-input" type="email" v-model="email" :placeholder="$t('formHeaderPlaceholder')" aria-label="Email">
-                    <button class="form-header-btn" type="submit" @click.prevent="enviar">{{ $t('formButtonText') }}</button>
+                <form class="form-inline form-header" method="post" action="../php/mailsend.php" name="contact-form-header">
+                    <input class="form-header-input" name="email" type="email" :placeholder="$t('formHeaderPlaceholder')" aria-label="Email">
+                    <button class="form-header-btn" type="submit">{{ $t('formButtonText') }}</button>
                 </form>
             </div>
         </div>
@@ -182,16 +180,6 @@ export default {
                 this.urlFlag = require('@/static/img/brasil.png')
                 this.urlButtonWtp = require('@/static/img/fale-conosco.png')
             }
-        },
-
-        enviar() {
-            this.$axios.$post('/mail/send', {
-                from: this.email,
-                subject: 'Contato - site bagagem',
-                text: this.email,
-            })
-            
-            alert('Contato registrado com sucesso! Entraremos em contato em breve!');
         },
 
         scroll(id) {  

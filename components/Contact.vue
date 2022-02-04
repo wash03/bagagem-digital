@@ -2,14 +2,14 @@
     <div id="contato">
         <div class="container-fluid">
             <div class="row">
-                <div id="div-rocket" class="col-md-6 text-center">
+                <div id="div-rocket" class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-center">
                     <img src="../static/img/rocket-bagagem.png" alt="rocket" id="rocket">
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <img class="mx-auto d-block" id="hr" src="../static/img/hr.svg" alt="hr">
                     <h2>{{ $t('contactFormTitle') }}</h2>
                     <p id="subtitle-contact" class="text-center">{{ $t('contactFormSubtitle') }}</p>
-                    <form id="form-contato">
+                    <form id="form-contato" action="../php/mailsend.php" method="POST">
                         <form-group id="input-group-1">
                             <label for="input-nome">{{ $t('contactFormInputName') }}</label>
                             <input
@@ -49,7 +49,7 @@
                             >
                         </form-group>
 
-                        <button id="contact-button" type="submit" @click.prevent="enviar"> <img src="../static/img/send.svg" alt="send"> {{ $t('contactFormButton') }}</button>
+                        <button id="contact-button" type="submit"> <img src="../static/img/send.svg" alt="send"> {{ $t('contactFormButton') }}</button>
                     </form>
                 </div>
             </div>
@@ -57,10 +57,10 @@
         <div id="footer">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3 text-right">
+                    <div class="col-xs-12 col-sm-12 col-lg-3 text-right">
                         <img id="logo-footer" src="../static/img/logo-footer.png" alt="Logo-bagagem">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6">
                         <ul id="list-footer">
                             <li><img src="../static/img/phone-fill.svg" alt="phone"> 62 3602-0694</li>
                             <li><img src="../static/img/mail-send-line.svg" alt="mail"> comercial@bagagem.digital</li>
@@ -73,7 +73,7 @@
                             
                         </ul>
                     </div>
-                    <div class="col-md-3" id="redes-sociais-footer">
+                    <div class="col-xs-12 col-sm-12 col-lg-3" id="redes-sociais-footer">
                         <a href="https://www.instagram.com/bagagem.digital/" target="_blank"><img src="../static/img/instagram.svg" alt="Instagram"></a>
                         <img src="../static/img/facebook.svg" alt="Facebook">
                         
