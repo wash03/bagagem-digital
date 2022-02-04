@@ -33,16 +33,16 @@
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'server1.livrehost.net.br';                     //Set the SMTP server to send through
+        $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'site@bagagem.digital';                     //SMTP username
-        $mail->Password   = 'Bagagem2021@';                               //SMTP password
+        $mail->Username   = 'username';                     //SMTP username
+        $mail->Password   = 'password';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;     
 
         //Recipients
-        $mail->setFrom('wstsilva@outlook.com.br', 'Site Bagagem');
-        $mail->addAddress('wstsilva@outlook.com.br');     //Add a recipient
+        $mail->setFrom('email@email.com', 'Site Bagagem');
+        $mail->addAddress('email@email.com');     //Add a recipient
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
